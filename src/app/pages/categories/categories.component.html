@@ -1,0 +1,40 @@
+<div class="content-header">
+  <div class="container-fluid">
+      <div class="row mb-2 pt-5">
+          <div class="col-sm-6">
+              <h1 class="m-0 text-dark">Produits</h1>
+          </div>
+          <!-- /.col -->
+          <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                  <li class="breadcrumb-item"><a [routerLink]="['/products']">Liste des produits</a></li>
+                  <li class="breadcrumb-item active">Produits</li>
+              </ol>
+          </div>
+          <!-- /.col -->
+      </div>
+      <!-- /.row -->
+  </div>
+  <!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+
+<!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+    <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="form-group col-4">
+            <label for="exampleInputEmail1">Name</label>
+            <input type="text" class="form-control"  id="exampleInputEmail1" placeholder="Name" formControlName="libelle">
+          </div>
+        </div>
+        <div class="row d-flex">
+            <button class="btn btn-success" type="submit">{{ buttonText }}</button>
+            <button class="btn btn-danger" [routerLink]="['/categories']" type="button"> Annuler</button>
+        </div>
+    </form>
+  </div>
+  <!-- Main row -->
+</section>
+<!-- /.content -->

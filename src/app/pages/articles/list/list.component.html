@@ -1,0 +1,75 @@
+<div class="content-header">
+  <div class="container-fluid">
+      <div class="row mb-2 pt-5">
+          <div class="col-sm-6">
+              <h1 class="m-0 text-dark">Liste des articles</h1>
+          </div>
+          <!-- /.col -->
+          <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                  <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                  <li class="breadcrumb-item active">Liste des articles</li>
+              </ol>
+          </div>
+          <!-- /.col -->
+      </div>
+      <!-- /.row -->
+  </div>
+  <!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+<!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+    <div class="container">
+      <div class="card m">
+        <div class="card-header">
+          <div class="navbar">
+              <div class="container-fluid">
+                  <h2 class="navbar-brand">Liste des articles</h2>
+                  <div class="d-flex">
+                      <button class="btn btn-light text-black"  type="button" [disabled]="disabled" (click)="onEditPage()">
+                          <i class="fa fa-edit"></i>
+                      </button>
+                      <button class="btn btn-light text-danger"  type="button" [disabled]="disabled" (click)="onEditPage()" >
+                          <i class="fa fa-trash"></i>
+                      </button>
+                      <a [routerLink]="['/articles/add']" class="btn btn-success text-light">
+                          <i class="fa fa-plus"></i>  Ajouter un nouveau
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </div>
+          <div class="card-body" *ngIf="articles.length > 0">
+            <table datatable [dtOptions]="dtOptions" class="table table-bordered hover  table display responsive nowrap">
+                 <thead>
+                    <tr class="">
+                        <th class="d-none">ID</th>
+                        <th class="text-center col-2">Image</th>
+                        <th class="text-center col-2">Titre</th>
+                        <th class="text-center col-2">Catégorie</th>
+                        <th class="text-center col-6">Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr  *ngFor="let article of articles">
+                        <td class="d-none">{{ article.id }}</td>
+                        <td class="text-center"><img [src]="'data:image/png;base64,' + article.content" alt="Image" width="50"> </td>
+                        <td class="text-center">{{ article.titre }}</td>
+                        <td class="text-center">{{ article.category_name }}</td>
+                        <td class="text-center">{{ article.contenu }}</td>
+                    </tr>
+                </tbody>
+              </table>
+              <!-- <div *ngIf="categories.length === 0">
+                Aucune donnée disponible dans le tableau.
+              </div> -->
+          </div>
+
+      </div>
+  </div>
+  </div>
+  <!-- Main row -->
+</section>
+<!-- /.content -->

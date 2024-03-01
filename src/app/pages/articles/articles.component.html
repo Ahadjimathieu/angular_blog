@@ -1,0 +1,111 @@
+ <div class="pt-5 pt-md-0">
+                        <div class="container-fluid mt-md-5 pt-md-5">
+                            <div class="content-wrappe pt-md-5">
+                                <div class="d-flex justify-content-center" id="collapseExample">
+                                    <div class="card card_slider col-md-12 d-flex justify-content-center">
+                                        <div class="card-body">
+                                            <form [formGroup]="articleForm" (ngSubmit)="onSubmit()">
+                                                <div class="row  d-flex justify-content-center">
+                                                    <input
+                                                        type="file"
+                                                        class="btn btn-success form-control"
+                                                        accept="image/*"
+                                                        hidden
+                                                        (change)="onFileSelected($event)"
+                                                        #fileInput
+                                                        formControlName="content"
+                                                    />
+                                                    <button
+                                                        type="button"
+                                                        class="btn col-md-6 btn-success btn-block"
+                                                        (click)="fileInput.click()"
+                                                    >
+                                                        Ajouter une nouvelle image
+                                                    </button>
+                                                </div>
+                                                <div
+                                                    class="row d-flex justify-content-center mt-3 border border-dark"
+
+                                                >
+                                                        <img
+                                                           *ngIf="selectedImageUrl"
+                                                           [src]="selectedImageUrl"
+                                                            alt="Image sélectionnée"
+                                                            class="w-100 h-100"
+                                                        />
+
+                                                        <h1 class="text-muted text-center mt-5 mb-5">
+                                                            Aucune image sélectionnée
+                                                        </h1>
+
+                                                </div>
+                                                 <div class="error-container">
+                                                          <span class="text-danger" *ngIf="articleForm.controls['content'].touched && articleForm.controls['content'].errors?.['required']">
+                                                             Ce chapm est obligatoire
+                                                          </span>
+                                                      </div>
+                                                <div class="row mt-2">
+                                                    <div class="col-md-6">
+                                                        <label for='titre' class="form-label">Titre</label>
+                                                        <input
+                                                            type="text"
+                                                            class='form-control'
+                                                            name="title"
+                                                            formControlName="titre"
+                                                            placeholder="Titre"
+                                                        >
+                                                       <div class="error-container">
+                                                          <span class="text-danger" *ngIf="articleForm.controls['titre'].touched && articleForm.controls['titre'].errors?.['required']">
+                                                             Ce champ est obligatoire
+                                                          </span>
+                                                      </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label for="category" class="form-label">Categorie</label>
+                                                        <select class="form-select form-control" aria-label="Default select example" name="category_id" formControlName="category_id">
+                                                          <option selected [value]="0">Choisir la catégorie</option>
+                                                          <option *ngFor="let category of categories" [value]="category.id">{{ category.libelle }}</option>
+                                                        </select>
+                                                         <div class="error-container">
+                                                          <span class="text-danger" *ngIf="articleForm.controls['category_id'].touched && articleForm.controls['category_id'].errors?.['required']">
+                                                             Ce champ est obligatoire
+                                                          </span>
+                                                      </div>
+                                                    </div>
+                                                </div>
+                                                 <div class="row mt-2">
+                                                        <label for='contenu' class="form-label">Contenu</label>
+                                                        <textarea class="form-control" id="validationTextarea" name="contenu" placeholder="Contenu" formControlName="contenu" rows="4">
+                                                        </textarea>
+                                                         <div class="error-container">
+                                                          <span class="text-danger" *ngIf="articleForm.controls['contenu'].touched && articleForm.controls['contenu'].errors?.['required']">
+                                                             Ce champ est obligatoire
+                                                          </span>
+                                                      </div>
+                                                </div>
+
+                                                <div class="row d-flex justify-content-center ">
+                                                    <div class="mb-3">
+                                                        <button
+                                                            class="btn btn-danger text-light text-bold m-2 pl-4 pr-4"
+                                                            type="button"
+                                                            [routerLink]="['/articles']"
+                                                        > Annuler
+                                                        </button>
+                                                        <button
+                                                            class="btn btn-success text-light text-bold m-2 pl-4 pr-4"
+                                                            type="submit"
+                                                        >
+                                                            <i class="far fa-save mr-2"></i>
+                                                           {{ buttonText }}
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
