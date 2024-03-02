@@ -44,7 +44,7 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "node_modules/admin-lte/plugins/jquery/jquery.min.js",
+              "node_modules/admin-lte/dist/js/adminlte.min.js",
               "node_modules/admin-lte/plugins/bootstrap/js/bootstrap.bundle.min.js",
               "node_modules/datatables.net/js/dataTables.min.js",
               "node_modules/datatables.net-bs4/js/dataTables.bootstrap4.min.js",
@@ -52,8 +52,7 @@
               "node_modules/admin-lte/plugins/bootstrap/js/bootstrap.bundle.min.js",
               "node_modules/datatables.net-select-bs4/js/select.bootstrap4.js",
               "node_modules/datatables.net-select/js/dataTables.select.js",
-              "node_modules/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js",
-              "node_modules/admin-lte/dist/js/adminlte.min.js"
+              "node_modules/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"
             ]
           },
           "configurations": {

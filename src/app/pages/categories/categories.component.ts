@@ -75,7 +75,7 @@ export class CategoriesComponent implements OnInit {
       .subscribe((response: any) => {
         this.showAlert('success', response.message);
         console.log(response.data);
-        this.router.navigateByUrl('/categories');
+        this.router.navigateByUrl('/admin/categories');
       });
   }
 
@@ -86,7 +86,7 @@ export class CategoriesComponent implements OnInit {
       .updateCategory(categoryId, categoryData)
       .subscribe((response: any) => {
         this.showAlert('success', response.message);
-        this.router.navigateByUrl('/categories');
+        this.router.navigateByUrl('/admin/categories');
       });
   }
 }

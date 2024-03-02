@@ -135,7 +135,7 @@ export class ArticlesComponent implements OnInit {
       .subscribe({
         next: (response: any) => {
           this.showAlert('success', response.message);
-          this.router.navigateByUrl('/articles');
+          this.router.navigateByUrl('/admin/articles');
         },
         error: (error: any) => {
           // Récupérer les erreurs de la réponse
@@ -171,7 +171,7 @@ export class ArticlesComponent implements OnInit {
       next: (response: any) => {
         console.log(response);
         this.showAlert('success', response.message);
-        this.router.navigateByUrl('/articles');
+        this.router.navigateByUrl('/admin/articles');
       },
       error: (error) => {
         // Récupérer les erreurs de la réponse

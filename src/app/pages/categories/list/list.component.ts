@@ -21,7 +21,7 @@ export class ListComponent implements OnInit, AfterViewInit {
 
   onEditPage(): void {
     // Naviguer vers la route /users/:id avec l'ID actuel
-    this.router.navigate(['/categories/', this.categoryId]);
+    this.router.navigate(['/admin/categories/', this.categoryId]);
   }
 
   ngOnInit(): void {
