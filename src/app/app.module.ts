@@ -12,6 +12,9 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { FooterfrontComponent } from './components/ui/footerfront/footerfront.component';
+import { HeaderComponent } from './components/ui/header/header.component';
+import { GuestlayoutComponent } from './components/ui/guestlayout/guestlayout.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +22,9 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     NavbarComponent,
     SidebarComponent,
     FooterComponent,
+    FooterfrontComponent,
+    HeaderComponent,
+    GuestlayoutComponent,
   ],
   imports: [
     BrowserModule,
